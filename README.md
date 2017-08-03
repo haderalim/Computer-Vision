@@ -11,6 +11,4 @@ ________________________________________________________________________________
 
 >> Tutorials:-
 ---------------
-1- preprocessing/filtering: 
-    . How to convert from RGB to Gray levels
-    . Applying Gaussian filter
+1- preprocessing/filtering: How to convert from RGB to Gray levels, Applying Gaussian filter
