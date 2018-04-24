@@ -5,7 +5,7 @@ import matplotlib.image as mpimg
 
 #Read image
 #image size (490, 655, 3) in uint8 datatype
-img = mpimg.imread('/home/mfp/Documents/Computer Vision Nanodegree program/Part1: Introduction to Computer Vision/Lesson2: Image Representation & Classification/RGB2GRAY/car.jpeg')
+img = mpimg.imread('car.jpeg')
 
 
 #To print image dimensions
