@@ -78,6 +78,10 @@ class Net(nn.Module):
         # 4x4 square convolution kernel
         self.conv = nn.Conv2d(1, 4, kernel_size=(k_height, k_width), bias=False)
         self.conv.weight = torch.nn.Parameter(weight)
+        
+        # define a pooling layer
+        #Parameters of MaxPool2d are: Kernel size 4x4 (size of box) and Stride = 4
+        self.pool = nn.MaxPool2d(4, 4)
 
     def forward(self, x):
         # calculates the output of a convolutional layer
@@ -85,8 +89,11 @@ class Net(nn.Module):
         conv_x = self.conv(x)
         activated_x = F.relu(conv_x)
         
+        # applies pooling layer
+        pooled_x = self.pool(activated_x)
+        
         # returns both layers
-        return conv_x, activated_x                  
+        return conv_x, activated_x, pooled_x                
         
         
         
@@ -134,10 +141,18 @@ for i in range(4):
 gray_img_tensor = Variable(torch.from_numpy(gray_img).unsqueeze(0).unsqueeze(1))
 
 # get the convolutional layer (pre and post activation)
-conv_layer, activated_layer = model(gray_img_tensor)
+conv_layer, activated_layer, pooled_layer = model(gray_img_tensor)
 
 # visualize the output of a conv layer
 viz_layer(conv_layer)
 
 # visualize the output of an activated conv layer
 viz_layer(activated_layer)
+
+'''
+Visualize the output of the pooling layer
+Then, take a look at the output of a pooling layer. The pooling layer takes as input the feature maps
+pictured above and reduces the dimensionality of those maps, by some pooling factor, by constructing a new, 
+smaller image of only the maximum (brightest) values in a given kernel area.
+'''
+viz_layer(pooled_layer)
