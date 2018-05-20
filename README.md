@@ -8,7 +8,7 @@ This tutorial for learning Image processing, Computer vision and Machine learnin
   
 . Machine learning: Python, numpy, scikit-learn and opencv.
 
-. Deep learning: Python, Tensorflow and keras.
+. Deep learning: Python, Tensorflow, keras and PyTorch
 
 
 
