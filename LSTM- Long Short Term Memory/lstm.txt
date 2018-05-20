@@ -1,0 +1,1 @@
+Kind of Neural network and solve problems of RNN (Recurrent Neural Network) by Long Term Memory.
