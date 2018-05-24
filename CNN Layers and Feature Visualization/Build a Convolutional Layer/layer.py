@@ -99,6 +99,19 @@ class Net(nn.Module):
         
         
 # instantiate the model and set the weights
+#unsequeeze(1) convert a tensor
+'''
+For example
+>>> x = torch.tensor([1, 2, 3, 4])
+>>> torch.unsqueeze(x, 0)
+tensor([[ 1,  2,  3,  4]])
+>>> torch.unsqueeze(x, 1)
+tensor([[ 1],
+        [ 2],
+        [ 3],
+        [ 4]])
+'''
+# FloatTensor is a type of tensor which has 32-bit floating point
 weight = torch.from_numpy(filters).unsqueeze(1).type(torch.FloatTensor)
 model = Net(weight)
 
