@@ -23,7 +23,7 @@ class Gaussian
 		// functions to evaluate 
 		float evaluate (float);
 		Gaussian mul (Gaussian);
-    Gaussian add (Gaussian);
+                Gaussian add (Gaussian);
 };
 
 
